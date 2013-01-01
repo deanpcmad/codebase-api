@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = CodebaseApi::VERSION
   gem.authors       = ["Dean Perry"]
   gem.email         = ["dean@deanperry.net"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Ruby gem for accessing the Codebase API}
+  gem.summary       = %q{Codebase API Ruby Gem}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)

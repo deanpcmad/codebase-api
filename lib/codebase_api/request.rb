@@ -1,8 +1,8 @@
 module CodebaseApi
   class Request
 
-    def self.request(path, data = {})
-      req = self.new(path, :post)
+    def self.request(path, data = {}, method = :get)
+      req = self.new(path, method)
       req.data = data
       req.make && req.success? ? req.output : false
     end
@@ -28,8 +28,7 @@ module CodebaseApi
       http_request = http_class.new(uri.request_uri)
       http_request.initialize_http_header({"User-Agent" => "CodebaseApiRubyClient/#{CodebaseApi::VERSION}"})
       http_request.initialize_http_header({"Accept" => "application/json"})
-      http_request.content_type = 'application/json'
-      http_request.content_type = 'application/json'
+      http_request.content_type = "application/json"
       http_request.basic_auth CodebaseApi.account_user, CodebaseApi.api_key
     
       http = Net::HTTP.new(uri.host, uri.port)

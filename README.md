@@ -149,9 +149,21 @@ CodebaseApi::Ticket.priorities("my-cool-project")
 CodebaseApi::Ticket.categories("my-cool-project")
 ```
 
+#### Show all the notes for a ticket
+```ruby
+CodebaseApi::Ticket.show("my-cool-project", ticket_id)
+```
 
+#### Show a specific ticket note
+```ruby
+CodebaseApi::Ticket.show_note("my-cool-project", ticket_id, note_id)
+```
 
-
+#### Update a ticket
+Unfortunately these are required otherwise it will set them to nil time_added, status_id, priority_id, category_id, assignee_id. To change the name of the ticket, change the summary.
+```ruby
+CodebaseApi::Ticket.update("my-cool-project", ticket_id, "content", time_added=nil, status_id=nil, priority_id=nil, category_id=nil, assignee_id=nil, summary=nil)
+```
 
 
 

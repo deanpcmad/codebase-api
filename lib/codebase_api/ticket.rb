@@ -33,6 +33,22 @@ module CodebaseApi
 				CodebaseApi::Request.request("#{project}/tickets/categories")
 			end
 
+			# view the notes for a ticket
+			def show(project, ticket_id)
+				CodebaseApi::Request.request("#{project}/tickets/#{ticket_id}/notes")
+			end
+
+			# show a specific note for a ticket
+			def show_note(project, ticket_id, note_id)
+				CodebaseApi::Request.request("#{project}/tickets/#{ticket_id}/notes/#{note_id}")
+			end
+
+			# create a note for a ticket
+			def update(project, ticket_id, content, time_added=nil, status_id=nil, priority_id=nil, category_id=nil, assignee_id=nil, summary=nil)
+				attributes = {:ticket_note => { :content => content, :time_added => time_added, :changes => { :status_id => status_id, :priority_id => priority_id, :category_id => category_id, :assignee_id => assignee_id, :summary => summary } } }
+				CodebaseApi::Request.request("#{project}/tickets/#{ticket_id}/notes", :post, attributes)
+			end
+
 		end
 	end
 end

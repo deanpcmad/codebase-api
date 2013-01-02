@@ -134,6 +134,32 @@ CodebaseApi::Ticket.search("my-cool-project", "query")
 CodebaseApi::Ticket.create("my-cool-project", "ticket title", "ticket description")
 ```
 
+#### Show all ticket statuses for a project
+```ruby
+CodebaseApi::Ticket.statuses("my-cool-project")
+```
+
+#### Show all ticket priorities for a project
+```ruby
+CodebaseApi::Ticket.priorities("my-cool-project")
+```
+
+#### Show all ticket categories for a project
+```ruby
+CodebaseApi::Ticket.categories("my-cool-project")
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -18,6 +18,21 @@ module CodebaseApi
 				CodebaseApi::Request.request("#{project}/tickets", :post, {:ticket => {:summary => summary, :description => description}} )
 			end
 
+			# show all ticket statuses
+			def statuses(project)
+				CodebaseApi::Request.request("#{project}/tickets/statuses")
+			end
+
+			# show all ticket priorities
+			def priorities(project)
+				CodebaseApi::Request.request("#{project}/tickets/priorities")
+			end
+
+			# show all ticket categories
+			def categories(project)
+				CodebaseApi::Request.request("#{project}/tickets/categories")
+			end
+
 		end
 	end
 end

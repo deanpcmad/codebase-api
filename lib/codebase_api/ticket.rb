@@ -55,6 +55,11 @@ module CodebaseApi
 				CodebaseApi::Request.request("#{project}/tickets/milestones")
 			end
 
+			# show all watchers for a ticket
+			def watchers(project, ticket_id)
+				CodebaseApi::Request.request("#{project}/tickets/#{ticket_id}/watchers")
+			end
+
 		end
 	end
 end

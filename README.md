@@ -170,7 +170,10 @@ CodebaseApi::Ticket.categories("my-cool-project")
 CodebaseApi::Ticket.milestones("my-cool-project")
 ```
 
-
+#### Show all watchers of a ticket for a project
+```ruby
+CodebaseApi::Ticket.watchers("my-cool-project", ticket_id)
+```
 
 
 

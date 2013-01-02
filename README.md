@@ -105,7 +105,17 @@ CodebaseApi::Deployment.create("my-cool-project", "test-repo", "branch", "revisi
 ```
 
 
+### Hooks
+#### Show the hooks for a project & repository
+```ruby
+CodebaseApi::Hook.all("my-cool-project", "test-repo")
+```
 
+#### Create a hook for a project & repository
+By default the username and password are nil
+```ruby
+CodebaseApi::Hook.create("my-cool-project", "test-repo", "url", "username", "password")
+```
 
 
 

@@ -18,11 +18,6 @@ module CodebaseApi
 				CodebaseApi::Request.request(project)
 			end
 
-			# view repositories for a project
-			def repos(project)
-				CodebaseApi::Request.request("#{project}/repositories")
-			end
-
 			# delete a project
 			def delete(project)
 				CodebaseApi::Request.request(project, :delete)

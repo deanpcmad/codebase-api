@@ -10,6 +10,7 @@ require "codebase_api/project_group"
 require "codebase_api/project_user"
 require "codebase_api/repository"
 require "codebase_api/commit"
+require "codebase_api/deployment"
 require "codebase_api/version"
 
 module CodebaseApi

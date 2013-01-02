@@ -98,8 +98,11 @@ CodebaseApi::Commit.show_path("my-cool-project", "test-repo", "abc123abc", "spec
 ```
 
 
-
-
+### Deployments
+#### Create a deployment for a project & repository
+```ruby
+CodebaseApi::Deployment.create("my-cool-project", "test-repo", "branch", "revision", "environment", "servers")
+```
 
 
 

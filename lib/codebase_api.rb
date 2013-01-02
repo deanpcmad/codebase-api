@@ -2,6 +2,7 @@ require 'time'
 require 'uri'
 require 'net/https'
 require 'json'
+require 'colorize'
 
 require "codebase_api/request"
 require "codebase_api/project"

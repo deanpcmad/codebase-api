@@ -64,9 +64,9 @@ module CodebaseApi
       end
 
       # show detailed info about the request
-      puts "[Codebase API] Sent: #{data}"
-      puts "[Codebase API] Requesting: #{[path].join('/')} on https://api3.codebasehq.com"
-      puts "[Codebase API] Response: #{http_result.body}"
+      puts "[Codebase API] Sent: #{data}".yellow
+      puts "[Codebase API] Requesting: #{[path].join('/')} on https://api3.codebasehq.com".yellow
+      puts "[Codebase API] Response: #{http_result.body}".yellow
 
       self
     end

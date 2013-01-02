@@ -6,6 +6,7 @@ require 'colorize'
 
 require "codebase_api/request"
 require "codebase_api/project"
+require "codebase_api/project_group"
 require "codebase_api/version"
 
 module CodebaseApi

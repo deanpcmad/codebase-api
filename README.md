@@ -29,11 +29,11 @@ CodebaseApi.api_key = "apikey"
 
 ## Commands
 
-The CodebaseApi gem is built to access all the Codebase API functions.
+The CodebaseApi gem is built to access all the Codebase API functions. Below are a list of commands currently supported.
 
 
 ### Projects
-#### Displays a list of all projects on your Codebase account
+#### All projects
 ```ruby
 CodebaseApi::Project.all
 ```
@@ -50,14 +50,14 @@ CodebaseApi::Project.create("a new project")
 
 
 ### Project Groups
-#### Display a list of all project groups
+#### All project groups
 ```ruby
 CodebaseApi::ProjectGroup.all
 ```
 
 
 ### Project Users
-#### Display a list of all users assigned to a project
+#### All users assigned to a project
 ```ruby
 CodebaseApi::ProjectUser.all("my-cool-project")
 ```
@@ -69,7 +69,7 @@ CodebaseApi::ProjectUser.assign("my-cool-project", [ :users => {:user => {:id =>
 
 
 ### Repositories
-#### Display a list of all repositories for a project
+#### All repositories for a project
 ```ruby
 CodebaseApi::Repository.all("my-cool-project")
 ```
@@ -119,7 +119,7 @@ CodebaseApi::Hook.create("my-cool-project", "test-repo", "url", "username", "pas
 
 
 ### Tickets
-#### Show all tickets for a project
+#### All tickets for a project
 ```ruby
 CodebaseApi::Ticket.all("my-cool-project")
 ```
@@ -176,7 +176,7 @@ CodebaseApi::Ticket.watchers("my-cool-project", ticket_id)
 ```
 
 ### Wiki
-#### Show all the pages in the wiki for a project
+#### All the pages in the wiki for a project
 ```ruby
 CodebaseApi::Wiki.all("my-cool-project")
 ```
@@ -188,12 +188,12 @@ CodebaseApi::Wiki.show("my-cool-project", "page-name")
 
 
 ### Public Keys
-#### Show all the public keys for a user
+#### All public keys for a user
 ```ruby
 CodebaseApi::PublicKey.all("username")
 ```
 
-#### Show all the deployment keys for a project
+#### All deployment keys for a project
 ```ruby
 CodebaseApi::PublicKey.deploy_keys("my-cool-project")
 ```
@@ -210,12 +210,12 @@ CodebaseApi::PublicKey.create_deployment("project", "description", "key")
 
 
 ### Users
-#### Show all users on your Codebase account
+#### All users
 ```ruby
 CodebaseApi::User.all
 ```
 
-#### Show all the user roles
+#### All user roles
 ```ruby
 CodebaseApi::User.roles
 ```
@@ -227,7 +227,7 @@ CodebaseApi::User.create("first name", "last name", "email address", role_id)
 
 
 ### Discussions
-#### Show all the discussions for a project
+#### All discussions for a project
 ```ruby
 CodebaseApi::Discussion.all("my-cool-project")
 ```
@@ -254,7 +254,7 @@ CodebaseApi::Discussion.update("my-cool-project", "test-discussion", "discussion
 
 
 ### Time Sessions
-#### Show all the time sessions for a project
+#### All time sessions for a project
 ```ruby
 CodebaseApi::TimeSession.all("my-cool-project")
 ```
@@ -293,11 +293,6 @@ CodebaseApi::TimeSession.update("my-cool-project", 123, "message", time)
 ```ruby
 CodebaseApi::TimeSession.delete("my-cool-project", 1234)
 ```
-
-
-
-
-
 
 
 ## Contributing

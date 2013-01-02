@@ -50,9 +50,9 @@ module CodebaseApi
 				CodebaseApi::Request.request("#{project}/tickets/categories")
 			end
 
-			# show all ticket milestones
+			# show all milestones
 			def milestones(project)
-				CodebaseApi::Request.request("#{project}/tickets/milestones")
+				CodebaseApi::Request.request("#{project}/milestones")
 			end
 
 			# show all watchers for a ticket

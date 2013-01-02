@@ -186,6 +186,7 @@ CodebaseApi::Wiki.all("my-cool-project")
 CodebaseApi::Wiki.show("my-cool-project", "page-name")
 ```
 
+
 ### Public Keys
 #### Show all the public keys for a user
 ```ruby
@@ -208,6 +209,21 @@ CodebaseApi::PublicKey.create_deployment("project", "description", "key")
 ```
 
 
+### Users
+#### Show all users on your Codebase account
+```ruby
+CodebaseApi::User.all
+```
+
+#### Show all the user roles
+```ruby
+CodebaseApi::User.roles
+```
+
+#### Create a new user
+```ruby
+CodebaseApi::User.create("first name", "last name", "email address", role_id)
+```
 
 
 

@@ -226,6 +226,45 @@ CodebaseApi::User.create("first name", "last name", "email address", role_id)
 ```
 
 
+### Discussions
+#### Show all the discussions for a project
+```ruby
+CodebaseApi::Discussion.all("my-cool-project")
+```
+
+#### Show all the categories for discussions in a project
+```ruby
+CodebaseApi::Discussion.categories("my-cool-project")
+```
+
+#### Show a specific discussion for a project
+```ruby
+CodebaseApi::Discussion.show("my-cool-project", "test-discussion")
+```
+
+#### Create a new discussion for a project
+```ruby
+CodebaseApi::Discussion.create("my-cool-project", "discussion title", "discussion content")
+```
+
+#### Update a discussion for a project
+```ruby
+CodebaseApi::Discussion.update("my-cool-project", "test-discussion", "discussion content")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Contributing

@@ -134,21 +134,6 @@ CodebaseApi::Ticket.search("my-cool-project", "query")
 CodebaseApi::Ticket.create("my-cool-project", "ticket title", "ticket description")
 ```
 
-#### Show all ticket statuses for a project
-```ruby
-CodebaseApi::Ticket.statuses("my-cool-project")
-```
-
-#### Show all ticket priorities for a project
-```ruby
-CodebaseApi::Ticket.priorities("my-cool-project")
-```
-
-#### Show all ticket categories for a project
-```ruby
-CodebaseApi::Ticket.categories("my-cool-project")
-```
-
 #### Show all the notes for a ticket
 ```ruby
 CodebaseApi::Ticket.show("my-cool-project", ticket_id)
@@ -165,8 +150,25 @@ Unfortunately these are required otherwise it will set them to nil time_added, s
 CodebaseApi::Ticket.update("my-cool-project", ticket_id, "content", time_added=nil, status_id=nil, priority_id=nil, category_id=nil, assignee_id=nil, summary=nil)
 ```
 
+#### Show all ticket statuses for a project
+```ruby
+CodebaseApi::Ticket.statuses("my-cool-project")
+```
 
+#### Show all ticket priorities for a project
+```ruby
+CodebaseApi::Ticket.priorities("my-cool-project")
+```
 
+#### Show all ticket categories for a project
+```ruby
+CodebaseApi::Ticket.categories("my-cool-project")
+```
+
+#### Show all ticket milestones for a project
+```ruby
+CodebaseApi::Ticket.milestones("my-cool-project")
+```
 
 
 

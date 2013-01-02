@@ -181,13 +181,31 @@ CodebaseApi::Ticket.watchers("my-cool-project", ticket_id)
 CodebaseApi::Wiki.all("my-cool-project")
 ```
 
-#### Show a specific the pages in the wiki for a project
+#### Show a specific page in the wiki for a project
 ```ruby
 CodebaseApi::Wiki.show("my-cool-project", "page-name")
 ```
 
+### Public Keys
+#### Show all the public keys for a user
+```ruby
+CodebaseApi::PublicKey.all("username")
+```
 
+#### Show all the deployment keys for a project
+```ruby
+CodebaseApi::PublicKey.deploy_keys("my-cool-project")
+```
 
+#### Create a new public key for a user
+```ruby
+CodebaseApi::PublicKey.create("username", "description", "key")
+```
+
+#### Create a deployment key for a project
+```ruby
+CodebaseApi::PublicKey.create_deployment("project", "description", "key")
+```
 
 
 

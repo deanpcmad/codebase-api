@@ -4,13 +4,14 @@ require 'net/https'
 require 'json'
 
 require "codebase_api/request"
+require "codebase_api/project"
 require "codebase_api/version"
 
 module CodebaseApi
 
 	class << self
     
-    ## API Authentication
+    # API Authentication
     attr_accessor :account_user, :api_key
     
   end

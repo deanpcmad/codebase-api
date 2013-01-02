@@ -1,7 +1,7 @@
 module CodebaseApi
   class Request
 
-    def self.request(path, data = {}, method = :get)
+    def self.request(path, method=:get, data = {})
       req = self.new(path, method)
       req.data = data
       req.make && req.success? ? req.output : false
@@ -44,7 +44,7 @@ module CodebaseApi
       elsif http_result.body == 'false'
         @output = false
       else
-        @output = JSON.parse(http_result.body)
+        http_result.body.present? ? @output = JSON.parse(http_result.body) : @output
       end
       @success = case http_result
       when Net::HTTPSuccess
@@ -64,9 +64,9 @@ module CodebaseApi
       end
 
       # show detailed info about the request
-      puts "[Codebase API] Sent: #{data}".yellow
-      puts "[Codebase API] Requesting: #{[path].join('/')} on https://api3.codebasehq.com".yellow
-      puts "[Codebase API] Response: #{http_result.body}".yellow
+      puts "[Codebase API] Sent: #{data}"
+      puts "[Codebase API] Requesting: #{[path].join('/')} on https://api3.codebasehq.com"
+      puts "[Codebase API] Response: #{http_result.body}"
 
       self
     end

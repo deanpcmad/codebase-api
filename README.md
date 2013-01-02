@@ -31,6 +31,8 @@ CodebaseApi.api_key = "apikey"
 
 The CodebaseApi gem is built to access all the Codebase API functions.
 
+
+### Projects
 #### Displays a list of all projects on your Codebase account
 ```ruby
 CodebaseApi::Project.all
@@ -40,6 +42,72 @@ CodebaseApi::Project.all
 ```ruby
 CodebaseApi::Project.view("my-cool-project")
 ```
+
+#### Create a new project
+```ruby
+CodebaseApi::Project.create("a new project")
+```
+
+
+### Project Groups
+#### Display a list of all project groups
+```ruby
+CodebaseApi::ProjectGroup.all
+```
+
+
+### Project Users
+#### Display a list of all users assigned to a project
+```ruby
+CodebaseApi::ProjectUser.all("my-cool-project")
+```
+
+#### Assign users to a project (currently broken)
+```ruby
+CodebaseApi::ProjectUser.assign("my-cool-project", [ :users => {:user => {:id => 123}, {:user => {:id => 123} } ])
+```
+
+
+### Repositories
+#### Display a list of all repositories for a project
+```ruby
+CodebaseApi::Repository.all("my-cool-project")
+```
+
+#### View a specified repository
+```ruby
+CodebaseApi::Repository.show("my-cool-project", "test-repo")
+```
+
+#### Create a repository for a project
+The types of repository are Git (git), Subversion (svn), Mercurial (hg) and Bazaar (bzr).
+```ruby
+CodebaseApi::Repository.create("my-cool-project", "new-repo-name", "git")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Contributing
 

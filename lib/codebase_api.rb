@@ -17,6 +17,7 @@ require "codebase_api/wiki"
 require "codebase_api/public_key"
 require "codebase_api/user"
 require "codebase_api/discussion"
+require "codebase_api/time_session"
 require "codebase_api/version"
 
 module CodebaseApi

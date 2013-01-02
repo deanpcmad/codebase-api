@@ -253,13 +253,46 @@ CodebaseApi::Discussion.update("my-cool-project", "test-discussion", "discussion
 ```
 
 
+### Time Sessions
+#### Show all the time sessions for a project
+```ruby
+CodebaseApi::TimeSession.all("my-cool-project")
+```
 
+#### Show time sessions added today for a project
+```ruby
+CodebaseApi::TimeSession.today("my-cool-project")
+```
 
+#### Show time sessions added this week for a project
+```ruby
+CodebaseApi::TimeSession.this_week("my-cool-project")
+```
 
+#### Show time sessions added this month for a project
+```ruby
+CodebaseApi::TimeSession.this_month("my-cool-project")
+```
 
+#### Create a new time session for a project
+```ruby
+CodebaseApi::TimeSession.create("my-cool-project", "message", time)
+```
 
+#### Show an existing time session for a project
+```ruby
+CodebaseApi::TimeSession.show("my-cool-project", 123)
+```
 
+#### Update an existing time session for a project
+```ruby
+CodebaseApi::TimeSession.update("my-cool-project", 123, "message", time)
+```
 
+#### Delete a time session for a project
+```ruby
+CodebaseApi::TimeSession.delete("my-cool-project", 1234)
+```
 
 
 

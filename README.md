@@ -86,7 +86,16 @@ CodebaseApi::Repository.create("my-cool-project", "new-repo-name", "git")
 ```
 
 
+### Commits
+#### Show a list of commits for a specific ref (short or long)
+```ruby
+CodebaseApi::Commit.show("my-cool-project", "test-repo", "abc123abc")
+```
 
+#### Show a list of commits for a specific ref (short or long) for a path
+```ruby
+CodebaseApi::Commit.show_path("my-cool-project", "test-repo", "abc123abc", "spec/features/admin_spec.rb")
+```
 
 
 

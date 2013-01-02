@@ -175,8 +175,16 @@ CodebaseApi::Ticket.milestones("my-cool-project")
 CodebaseApi::Ticket.watchers("my-cool-project", ticket_id)
 ```
 
+### Wiki
+#### Show all the pages in the wiki for a project
+```ruby
+CodebaseApi::Wiki.all("my-cool-project")
+```
 
-
+#### Show a specific the pages in the wiki for a project
+```ruby
+CodebaseApi::Wiki.show("my-cool-project", "page-name")
+```
 
 
 

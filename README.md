@@ -118,9 +118,21 @@ CodebaseApi::Hook.create("my-cool-project", "test-repo", "url", "username", "pas
 ```
 
 
+### Tickets
+#### Show all tickets for a project
+```ruby
+CodebaseApi::Ticket.all("my-cool-project")
+```
 
+#### Search all tickets in a project
+```ruby
+CodebaseApi::Ticket.search("my-cool-project", "query")
+```
 
-
+#### Create a new ticket for a project
+```ruby
+CodebaseApi::Ticket.create("my-cool-project", "ticket title", "ticket description")
+```
 
 
 

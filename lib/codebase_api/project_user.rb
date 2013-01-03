@@ -8,7 +8,7 @@ module CodebaseApi
 
 		# assign users to a project
 		def self.assign(project, users)
-			CodebaseApi::Request.request("#{project}/assignments", :post, {:users => users})
+			CodebaseApi::Request.request("#{project}/assignments", :post, {:users => {:user => users } })
 		end
 
 	end

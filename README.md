@@ -62,9 +62,9 @@ CodebaseApi::ProjectGroup.all
 CodebaseApi::ProjectUser.all("my-cool-project")
 ```
 
-#### Assign users to a project (currently broken)
+#### Assign users to a project
 ```ruby
-CodebaseApi::ProjectUser.assign("my-cool-project", [ :users => {:user => {:id => 123}, {:user => {:id => 123} } ])
+CodebaseApi::ProjectUser.assign("my-cool-project", [{:id => 123}, {:id => 321}])
 ```
 
 

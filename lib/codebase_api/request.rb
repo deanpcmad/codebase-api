@@ -54,19 +54,13 @@ module CodebaseApi
       when Net::HTTPForbidden, Net::HTTPUnauthorized
         raise CodebaseApi::Errors::AccessDenied, "Access Denied"
       when Net::HTTPNotFound
-        json = JSON.parse(http_result.body)
-        raise CodebaseApi::Errors::NotFound, json['error']
+        @output = false
       when Net::HTTPBadRequest, Net::HTTPUnauthorized, Net::HTTPMethodNotAllowed
         json = JSON.parse(http_result.body)
         raise CodebaseApi::Errors::AccessDenied, "Access Denied for '#{CodebaseApi.application}'  #{json['error']}"
       else
         raise CodebaseApi::Errors::CommunicationError, http_result.body
       end
-
-      # show detailed info about the request
-      puts "[Codebase API] Sent: #{data}".yellow
-      puts "[Codebase API] Requesting: #{[path].join('/')} on https://api3.codebasehq.com".yellow
-      puts "[Codebase API] Response: #{http_result.body}".yellow
 
       self
     end

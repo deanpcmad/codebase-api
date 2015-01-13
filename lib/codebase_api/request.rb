@@ -44,7 +44,7 @@ module CodebaseApi
       elsif http_result.body == 'false'
         @output = false
       else
-        http_result.body.present? ? @output = JSON.parse(http_result.body) : @output
+        !http_result.body.empty? ? @output = JSON.parse(http_result.body) : @output
       end
       @success = case http_result
       when Net::HTTPSuccess

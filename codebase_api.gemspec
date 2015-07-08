@@ -10,12 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["dean@deanperry.net"]
   gem.description   = %q{Ruby gem for accessing the Codebase API}
   gem.summary       = %q{Codebase API Ruby Gem}
-  gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
-
-  gem.add_runtime_dependency "colorize"
 end

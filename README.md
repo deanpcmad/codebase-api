@@ -16,6 +16,22 @@ Or install it yourself as:
 
     $ gem install codebase_api
 
+
+## Changelog
+
+### 0.1.2
+
+- Fixed JSON parsing error when viewing files
+
+### 0.1.1
+
+- Fixed issue when using the gem with non Rails apps
+- Output false when 404
+
+### 0.1.0
+
+- Public release
+
 ## Usage
 
 The Codebase API requires authentication using your account name & username along with your API Key.

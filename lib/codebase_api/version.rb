@@ -1,3 +1,3 @@
 module CodebaseApi
-  VERSION = "0.1.1"
-end
+  VERSION = "0.1.2"
+en

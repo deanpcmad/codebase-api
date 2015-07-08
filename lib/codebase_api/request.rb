@@ -44,7 +44,16 @@ module CodebaseApi
       elsif http_result.body == 'false'
         @output = false
       else
-        !http_result.body.empty? ? @output = JSON.parse(http_result.body) : @output
+        if !http_result.body.empty?
+          # render the output if it's a blob
+          if /\/blob\//.match(uri.request_uri).nil?
+            @output = JSON.parse(http_result.body)
+          else
+            @output = http_result.body
+          end
+        else
+          @output
+        end
       end
       @success = case http_result
       when Net::HTTPSuccess

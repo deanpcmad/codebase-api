@@ -4,8 +4,17 @@ module CodebaseApi
 		class << self
 
 			# list the tickets for a project
-			def all(project)
-				CodebaseApi::Request.request("#{project}/tickets")
+			def all(project, num_pages = nil)
+        if num_pages
+          tickets = []
+          for i in 0..num_pages
+            result = CodebaseApi::Request.request("#{project}/tickets", :post, { :page => i } )
+            tickets = tickets + result if result
+          end
+          tickets
+        else
+				  CodebaseApi::Request.request("#{project}/tickets")
+        end
 			end
 
 			# search all tickets

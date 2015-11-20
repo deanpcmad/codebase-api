@@ -5,11 +5,11 @@ module CodebaseApi
 
 			# list the tickets for a project
 			def all(project, page_number = nil)
-        if page_number.is_a? Integer
-          CodebaseApi::Request.request("#{project}/tickets?page=#{page_number}")
-        else
-				  CodebaseApi::Request.request("#{project}/tickets")
-        end
+        			if page_number.is_a? Integer
+          				CodebaseApi::Request.request("#{project}/tickets?page=#{page_number}")
+        			else
+				  	CodebaseApi::Request.request("#{project}/tickets")
+        			end
 			end
 
 			# search all tickets

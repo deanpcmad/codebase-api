@@ -19,6 +19,11 @@ Or install it yourself as:
 
 ## Changelog
 
+### 0.1.3
+
+- Pagination support for Tickets
+- Converted tabs to spaces
+
 ### 0.1.2
 
 - Fixed JSON parsing error when viewing files

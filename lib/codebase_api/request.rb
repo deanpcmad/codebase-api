@@ -53,8 +53,8 @@ module CodebaseApi
               @output = http_result.body
             end
           rescue JSON::ParserError => e
-            ap "JSON PARSER ERROR"
-            ap e
+            puts "JSON PARSER ERROR"
+            puts e
           end
         else
           @output

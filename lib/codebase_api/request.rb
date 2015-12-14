@@ -46,10 +46,15 @@ module CodebaseApi
       else
         if !http_result.body.empty?
           # render the output if it's a blob
-          if /\/blob\//.match(uri.request_uri).nil?
-            @output = JSON.parse(http_result.body)
-          else
-            @output = http_result.body
+          begin
+            if /\/blob\//.match(uri.request_uri).nil?
+              @output = JSON.parse(http_result.body)
+            else
+              @output = http_result.body
+            end
+          rescue JSON::ParserError => e
+            ap "JSON PARSER ERROR"
+            ap e
           end
         else
           @output
